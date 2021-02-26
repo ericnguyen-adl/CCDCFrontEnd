@@ -24,6 +24,21 @@
   color: white;
 }
 
+.headerStyle {
+  background-color: yellowgreen;
+  display: flex;  
+  /* margin: 0 auto; */
+  width: 100%;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.tabStyle {
+  background-color: orange;
+
+}
+
 .App-link {
   color: #61dafb;
 }
