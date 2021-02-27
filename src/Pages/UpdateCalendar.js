@@ -1,6 +1,6 @@
 function UpdateCalendar() {
     return (
-      <div>
+      <div class = "tabContainer">
         This is the Update page. 
       </div>
     );

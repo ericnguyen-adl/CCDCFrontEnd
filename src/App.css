@@ -1,53 +1,83 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .headerStyle {
-  background-color: yellowgreen;
+  background-color: white;
   display: flex;  
-  /* margin: 0 auto; */
-  width: 100%;
+  width: 99%;
   justify-content: space-between;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: 10px;
 }
 
 .tabStyle {
-  background-color: orange;
+  background-color: lightgreen;
+  padding-bottom: -5px;
+  width: 99%;
+  margin-left: 10px;
+  margin-right: 10px;
 
 }
 
-.App-link {
-  color: #61dafb;
+.tabContainer {
+  background-color: white;
+  margin-top: -10px;
+  padding-top: 40px;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tab-content {
+  font-weight: bold;
 }
+
+.tab-header {
+  font-weight: bold;
+}
+.pageTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.infoText {
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+
+.tableStyle {
+  width: 40%;
+  height: 80px;
+}
+
+#calendar {
+  width: 200px;
+  margin-left: 5px;
+}
+
+#inputText {
+  width: 193px;
+  margin-left: 5px;
+}
+.rowContainer {
+  line-height: 30px;
+}
+#calculateButton {
+  margin-left: 150px;
+  margin-top: 30px;
+  height: 30px;
+  background-color: lightgreen;
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 8px;
+}
+
+#myLoginButton {
+  background-color: yellowgreen;
+  border-radius: 5px;
+}
+
+
+
+
+

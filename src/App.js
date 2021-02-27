@@ -15,7 +15,8 @@ function App() {
           Customized Commit Date Calculator
         </div>
         <div>
-          <button> Log in </button>
+        
+            <button id = "myLoginButton">Log in</button>
         </div>
       </div>
 
@@ -29,7 +30,7 @@ function App() {
           </TabList>
 
           <TabPanel>
-            <div className="tab-content">
+            <div>
               <Home></Home>
             </div>
           </TabPanel>

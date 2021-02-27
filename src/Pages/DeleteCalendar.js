@@ -1,6 +1,6 @@
 function DeleteCalendar() {
     return (
-      <div>
+      <div class = "tabContainer">
         This is the Delete page. 
       </div>
     );

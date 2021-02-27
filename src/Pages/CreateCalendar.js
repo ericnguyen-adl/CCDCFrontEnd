@@ -1,6 +1,6 @@
 function CreateCalendar() {
     return (
-      <div>
+      <div class = "tabContainer">
         This is the Create page. 
       </div>
     );
