@@ -44,7 +44,7 @@
 
 
 .tableStyle {
-  width: 40%;
+  width: 30%;
   height: 80px;
 }
 
@@ -60,23 +60,57 @@
 .rowContainer {
   line-height: 30px;
 }
-#calculateButton {
-  margin-left: 150px;
+#calculateButton, #updateButton, #cancelButton, #confirmButton, #cancelDeleteButton {
+  margin-left: 100px;
+  margin-right: -50px;
   margin-top: 30px;
   height: 30px;
-  background-color: lightgreen;
   font-size: 16px;
   font-weight: bold;
   padding-left: 20px;
   padding-right: 20px;
-  border-radius: 8px;
+  background-color: lightgreen;
 }
 
 #myLoginButton {
-  background-color: yellowgreen;
-  border-radius: 5px;
+  background-color: lightgreen;
 }
 
+.removeDateTable, .selectDateInWeekTable {
+  margin-top: 10px;
+  margin-left: 5px;
+  background-color: lightyellow;
+  border: 1px solid black;
+}
+
+.removeDateTableHeader {
+  padding-right: 10px;
+  padding-left: 10px;
+  font-weight: bold;
+  border: 1px solid black;
+}
+
+.removeDateTableRow {
+  padding-right: 10px;
+  padding-left: 10px;
+  border: 1px solid black;
+}
+
+#removeDateTableContainer {
+  padding-bottom: 20px;
+}
+
+#removeNWdaysTitle {
+  vertical-align: top ;
+}
+
+#deletePageButtons {
+  margin-top: -30px;
+}
+
+#nonworkingdaysLabel {
+  vertical-align: top;
+}
 
 
 

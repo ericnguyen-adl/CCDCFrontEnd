@@ -35,17 +35,17 @@ function App() {
             </div>
           </TabPanel>
           <TabPanel>
-            <div className="tab-content">
+            <div>
               <UpdateCalendar></UpdateCalendar>
             </div>
           </TabPanel>
           <TabPanel>
-            <div className="tab-content">
+            <div>
               <DeleteCalendar></DeleteCalendar>
             </div>
           </TabPanel>
           <TabPanel>
-            <div className="tab-content">
+            <div>
               <CreateCalendar></CreateCalendar>
             </div>
           </TabPanel>
