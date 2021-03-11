@@ -6,10 +6,12 @@ function UpdateCalendar() {
     <div class="tabContainer">
       <div class="pageTitle"> Update your calendar</div>
       <div class="infoText">Update the Non-Working days for your calendar</div>
-      <table class="tableStyle">
+      
+      <table class="tableStyle" >
+
         <tr class="rowContainer">
-          <td><label>Select a calendar to use:</label></td>
-          <td>
+          <td class="removeDateTableRow"><label>Select a calendar to use:</label></td>
+          <td class="removeDateTableRow">
             <select name="calendar" id="calendar">
               <option value="">Select Calendar</option>
               <option value="South Australia Calendar">South Australia Calendar</option>
@@ -17,25 +19,48 @@ function UpdateCalendar() {
               <option value="New South Wales Calendar">New South Wales Calendar</option>
             </select>
           </td>
-          <td></td>
         </tr>
+        
         <tr class="rowContainer">
-          <td>
-            <label>New Non-Working day:</label>
+          <td colspan="2" class="removeDateTableRow">
+            <label>Add a new Non-Working day:</label>
           </td>
-          <td>
-            <input id="inputText" type="text"></input>
+        </tr>
+
+        <tr>
+          <td class="removeDateTableRow">
+            <label class="updateCalendarLabels">Name: </label>
           </td>
-          <td>
+          <td class="removeDateTableRow">
+            <input id="inputText" name="newDateNameTextBox"type="text"></input>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="removeDateTableRow">
+            <label class="updateCalendarLabels">Date: </label>
+          </td>
+          <td  class="removeDateTableRow">
+            <input id="datePicker" type="date" name="newDateInput"></input>
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="removeDateTableRow"></td>
+          <td class="removeDateTableRow">
             <input id="addNonWorkingdayButton" type="button" value="Add"></input>
           </td>
         </tr>
 
         <tr class="rowContainer">
-          <td id="removeNWdaysTitle">
+          <td colSpan="2" class="removeDateTableRow" id="removeNWdaysTitle">
             <label>Current Nonworking days:</label>
           </td>
-          <td colspan="2">
+        </tr>
+
+        <tr class="rowContainer">
+
+          <td colspan="2"  class="removeDateTableRow">
             <table class="removeDateTable">
               <tr>
                 <td class="removeDateTableHeader">Name</td>
@@ -69,7 +94,7 @@ function UpdateCalendar() {
       </table>
 
 
-      <input id="updateButton" type="button" value="Update"></input>
+      <input id="updateButton" type="button" value="Save"></input>
       <input id="cancelButton" type="button" value="Cancel"></input>
     </div>
 

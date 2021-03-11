@@ -8,6 +8,10 @@
   margin-left: 10px;
 }
 
+.updateCalendarLabels {
+  margin-left: 0.5em;
+}
+
 .tabStyle {
   background-color: lightgreen;
   padding-bottom: -5px;
@@ -23,6 +27,8 @@
   padding-top: 40px;
 
 }
+
+
 
 .tab-content {
   font-weight: bold;
@@ -46,6 +52,8 @@
 .tableStyle {
   width: 30%;
   height: 80px;
+  border: 1px solid black;
+  background-color: pink;
 }
 
 #calendar {
@@ -57,10 +65,15 @@
   width: 193px;
   margin-left: 5px;
 }
+
+#datePicker {
+  width: 193px;
+  margin-left: 5px;
+}
 .rowContainer {
   line-height: 30px;
 }
-#calculateButton, #updateButton, #cancelButton, #confirmButton, #cancelDeleteButton {
+#calculateButton, #updateButton, #cancelButton, #confirmButton, #deleteButton, #cancelDeleteButton {
   margin-left: 100px;
   margin-right: -50px;
   margin-top: 30px;
@@ -104,9 +117,9 @@
   vertical-align: top ;
 }
 
-#deletePageButtons {
+/* #deletePageButtons {
   margin-top: -30px;
-}
+} */
 
 #nonworkingdaysLabel {
   vertical-align: top;

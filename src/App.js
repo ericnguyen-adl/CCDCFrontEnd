@@ -6,6 +6,7 @@ import Home from './Pages/Home';
 import CreateCalendar from './Pages/CreateCalendar';
 import DeleteCalendar from './Pages/DeleteCalendar';
 import UpdateCalendar from './Pages/UpdateCalendar';
+import UserAdmin from './Pages/UserAdmin';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Tab>Update Calendar</Tab>
             <Tab>Delete Calendar</Tab>
             <Tab>Create Calendar</Tab>
+            <Tab>User Admin</Tab>
           </TabList>
 
           <TabPanel>
@@ -47,6 +49,11 @@ function App() {
           <TabPanel>
             <div>
               <CreateCalendar></CreateCalendar>
+            </div>
+          </TabPanel>
+          <TabPanel>
+            <div>
+              <UserAdmin></UserAdmin>
             </div>
           </TabPanel>
         </Tabs>
