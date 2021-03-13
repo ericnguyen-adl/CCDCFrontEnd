@@ -1,5 +1,5 @@
 
-import appConfig from './../config';
+// import appConfig from './../config';
 
 
 function CreateCalendar() {

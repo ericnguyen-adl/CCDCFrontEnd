@@ -9,6 +9,7 @@ import UpdateCalendar from './Pages/UpdateCalendar';
 import UserAdmin from './Pages/UserAdmin';
 
 function App() {
+  console.log("Testing log..");  
   return (
     <div className="with-react-tabs">
       <div className="headerStyle">

@@ -1,52 +1,129 @@
 
-
+import React, { useEffect, useState } from "react";
+import appConfig from './../config';
 
 function Home() {
-    return (
-      <div class = "tabContainer">
-        <div class = "pageTitle"> Calculate the commit date</div>
-        <div class = "infoText">Calculate the expected commit date based on the lead time in days</div>
-        <table class="tableStyle">
-          <tr class = "rowContainer">
-            <td><label>Select a calendar to use:</label></td>            
-            <td>
-              <select name = "calendar" id = "calendar">
-                <option value = "">Select Calendar</option>
-                <option value = "South Australia Calendar">South Australia Calendar</option>
-                <option value = "Victoria Calendar">Victoria Calendar</option>
-                <option value = "New South Wales Calendar">New South Wales Calendar</option>
-              </select>
-            </td>
-          </tr>
-          <tr class = "rowContainer">
-            <td>
-              <label>Enter the lead time in days: </label>
-            </td>
-            <td>
-              <input id = "inputText" type="text"></input>
-            </td>
-          </tr>
-          <tr class = "rowContainer">
-            <td>
-              <label>Exclude Weekend in Calculation </label>
-            </td>
-            <td>
-            <input type="checkbox"></input>            
-            </td>
-          </tr>
-          <tr class = "rowContainer">
-            <td>
-              <label>Exclude Holiday in Calculation </label>
-            </td>
-            <td>
-            <input type="checkbox"></input>                
-            </td>
-          </tr>
-        </table>
-        <input id = "calculateButton" type="button" value= "Calculate commit date"></input>
-      </div>
-      
-    );
+
+  const [calendarList, setCalendarList] = useState([]);
+  const [leadTimeInDays, setLeadTimeIndays] = useState(0);
+  const [excludeWeekendOption, setExcludeWeekendOption] = useState(false);
+  const [excludeHolidayOption, setExcludeHolidayOption] = useState(false);
+  const [newDate, setNewDate] = useState("");
+
+  const baseURL = appConfig.BaseURL;
+
+  const calculateDate = () => {
+    if (excludeWeekendOption) {
+      if (!excludeHolidayOption) {
+        fetchNewDate("calculateNewDateExcludeWk");
+      } else {
+        var request = new XMLHttpRequest();
+        request.open('POST', baseURL + 'calculateNewDateExcludeAll' + '?calendarCode=' + 'VIC'
+          + '&processingDays=' + leadTimeInDays + '&startDate=' + '2021-03-13', true)
+        request.onload = function () {
+          var data = JSON.parse(this.response);
+          if (data != null) {
+            console.log("New date = " + data);
+            setNewDate(data); 
+          }
+        }
+        request.send();
+        document.getElementById("outputLabel").style.display = "block"; 
+      }
+    } else {
+      // Not exclude anthing
+      fetchNewDate("calculateNewDate");
+    }
   }
-  
-  export default Home;
+
+  const fetchNewDate = (calculatedMethod) => {
+    var request = new XMLHttpRequest();
+    request.open('POST', baseURL + calculatedMethod + '?startDate='
+      + '2021-03-13' + '&processingDays=' + leadTimeInDays, true)
+    request.onload = function () {
+      var data = JSON.parse(this.response);
+      if (data != null) {
+        console.log("New date = " + data);
+        setNewDate(data); 
+      }
+    }
+    request.send();
+    document.getElementById("outputLabel").style.display = "block"; 
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = () => {
+    var request = new XMLHttpRequest();
+    request.open('GET', 'http://localhost:8080/api/calendars', true)
+    request.onload = function () {
+      var data = JSON.parse(this.response);
+      if (data != null) {
+        setCalendarList(data);
+      }
+    }
+    request.send()
+  }
+
+  const changeExcludeWeekendOption = () => {
+    setExcludeWeekendOption(!excludeWeekendOption);
+  }
+
+  const changeExcludeHolidayOption = () => {
+    setExcludeHolidayOption(!excludeHolidayOption);
+  }
+
+  return (
+    <div class="tabContainer">
+      <div class="pageTitle"> Calculate the commit date</div>
+      <div class="infoText">Calculate the expected commit date based on the lead time in days</div>
+      <table class="tableStyle">
+        <tr class="rowContainer">
+          <td><label>Select a calendar to use:</label></td>
+          <td>
+            <select name="calendar" id="calendar">
+              {
+                calendarList.map((option, index) => (
+                  <option value={option.calendarCode} key={index}>{option.calendarName}</option>
+                ))
+              }
+            </select>
+          </td>
+        </tr>
+        <tr class="rowContainer">
+          <td>
+            <label>Enter the lead time in days: </label>
+          </td>
+          <td>
+            <input id="inputText" type="text" onChange={e => setLeadTimeIndays(e.target.value)}></input>
+          </td>
+        </tr>
+        <tr class="rowContainer">
+          <td>
+            <label>Exclude Weekend in Calculation </label>
+          </td>
+          <td>
+            <input type="checkbox" onClick={() => changeExcludeWeekendOption()} ></input>
+          </td>
+        </tr>
+        <tr class="rowContainer">
+          <td>
+            <label>Exclude Holiday in Calculation </label>
+          </td>
+          <td>
+            <input type="checkbox" disabled = {!excludeWeekendOption} onClick={() => changeExcludeHolidayOption()}></input>
+          </td>
+        </tr>
+      </table>
+      <input id="calculateButton" type="button" value="Calculate commit date" onClick={() => calculateDate()}></input>
+      <div id = "outputLabel">
+        <label> The New Commit Date based on above setting and calendar is {newDate} </label>
+      </div>
+    </div>
+
+  );
+}
+
+export default Home;
