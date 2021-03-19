@@ -6,40 +6,50 @@ function Home() {
 
   const [calendarList, setCalendarList] = useState([]);
   const [leadTimeInDays, setLeadTimeIndays] = useState(0);
+  const [currentCalendarCode, setCurrentCalendarCode] = useState(""); 
   const [excludeWeekendOption, setExcludeWeekendOption] = useState(false);
   const [excludeHolidayOption, setExcludeHolidayOption] = useState(false);
+  
   const [newDate, setNewDate] = useState("");
 
   const baseURL = appConfig.BaseURL;
+  const currentDate = new Date().toISOString().slice(0,10); 
 
   const calculateDate = () => {
-    if (excludeWeekendOption) {
-      if (!excludeHolidayOption) {
-        fetchNewDate("calculateNewDateExcludeWk");
-      } else {
-        var request = new XMLHttpRequest();
-        request.open('POST', baseURL + 'calculateNewDateExcludeAll' + '?calendarCode=' + 'VIC'
-          + '&processingDays=' + leadTimeInDays + '&startDate=' + '2021-03-13', true)
-        request.onload = function () {
-          var data = JSON.parse(this.response);
-          if (data != null) {
-            console.log("New date = " + data);
-            setNewDate(data); 
-          }
-        }
-        request.send();
-        document.getElementById("outputLabel").style.display = "block"; 
-      }
+    if(currentCalendarCode == "Select Calendar" || currentCalendarCode == "") {
+      document.getElementById("outputLabel").style.display = "none"; 
+      alert("Please select a calendar to calculate"); 
     } else {
-      // Not exclude anthing
-      fetchNewDate("calculateNewDate");
+      if (excludeWeekendOption) {
+        if (!excludeHolidayOption) {
+          fetchNewDate("calculateNewDateExcludeWk");
+        } else {
+          var request = new XMLHttpRequest();
+          request.open('POST', baseURL + 'calculateNewDateExcludeAll' + '?calendarCode=' + 'VIC'
+            + '&processingDays=' + leadTimeInDays + '&startDate=' + currentDate, true)
+          request.onload = function () {
+            var data = JSON.parse(this.response);
+            if (data != null) {
+              console.log("New date = " + data);
+              setNewDate(data); 
+            }
+          }
+          request.send();
+          document.getElementById("outputLabel").style.display = "block"; 
+        }
+      } else {
+        // Not exclude anthing
+        fetchNewDate("calculateNewDate");
+      }
+
     }
+    
   }
 
   const fetchNewDate = (calculatedMethod) => {
     var request = new XMLHttpRequest();
     request.open('POST', baseURL + calculatedMethod + '?startDate='
-      + '2021-03-13' + '&processingDays=' + leadTimeInDays, true)
+      + currentDate + '&processingDays=' + leadTimeInDays, true)
     request.onload = function () {
       var data = JSON.parse(this.response);
       if (data != null) {
@@ -57,7 +67,7 @@ function Home() {
 
   const fetchData = () => {
     var request = new XMLHttpRequest();
-    request.open('GET', 'http://localhost:8080/api/calendars', true)
+    request.open('GET', baseURL + 'calendars', true)
     request.onload = function () {
       var data = JSON.parse(this.response);
       if (data != null) {
@@ -83,7 +93,8 @@ function Home() {
         <tr class="rowContainer">
           <td><label>Select a calendar to use:</label></td>
           <td>
-            <select name="calendar" id="calendar">
+            <select name="calendar" id="calendar" onChange = {e => setCurrentCalendarCode(e.target.value)}>
+              <option>Select Calendar</option>
               {
                 calendarList.map((option, index) => (
                   <option value={option.calendarCode} key={index}>{option.calendarName}</option>
