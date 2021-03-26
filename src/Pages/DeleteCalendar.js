@@ -36,7 +36,7 @@ function DeleteCalendar() {
             var data = JSON.parse(this.response);
             if (data != null) {
               console.log(data.calendarName); 
-              alert("The Calendar " + data.calendarName + " was delete"); 
+              alert("The Calendar " + data.calendarName + " has been deleted"); 
               setCurrentCalendarCode("Select Calendar"); 
             }
           }
