@@ -4,7 +4,9 @@ import appConfig from './../config';
 
 
 
-function DeleteCalendar() {
+function DeleteCalendar(props) {
+
+  const username = props.username; 
 
   const [calendarList, setCalendarList] = useState([]);
   const baseURL = appConfig.BaseURL;
@@ -16,7 +18,7 @@ function DeleteCalendar() {
 
   const fetchData = () => {
     var request = new XMLHttpRequest();
-    request.open('GET', baseURL + 'calendars', true)
+    request.open('GET', baseURL + 'getCalendarsForUser/' + username, true)
     request.onload = function () {
       var data = JSON.parse(this.response);
       if (data != null) {

@@ -86,7 +86,7 @@
 }
 
 #myLoginButton {
-  background-color: lightgreen;
+  margin-right: 20px;
 }
 
 .removeDateTable, .selectDateInWeekTable {
@@ -131,6 +131,13 @@
   font-weight: bold;
   color: blue;
   display: none;
+}
+
+#logo {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 100px;
+  width: 100px;
 }
 
 

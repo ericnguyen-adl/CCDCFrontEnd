@@ -2,14 +2,17 @@
 import React, { useEffect, useState } from "react";
 import appConfig from './../config';
 
-function Home() {
+function Home(props) {
 
+
+  const username = props.username; 
   const [calendarList, setCalendarList] = useState([]);
   const [leadTimeInDays, setLeadTimeIndays] = useState(0);
   const [currentCalendarCode, setCurrentCalendarCode] = useState(""); 
   const [excludeWeekendOption, setExcludeWeekendOption] = useState(false);
-  const [excludeHolidayOption, setExcludeHolidayOption] = useState(false);
+  const [excludeHolidayOption, setExcludeHolidayOption] = useState(false);  
   
+
   const [newDate, setNewDate] = useState("");
 
   const baseURL = appConfig.BaseURL;
@@ -67,7 +70,7 @@ function Home() {
 
   const fetchData = () => {
     var request = new XMLHttpRequest();
-    request.open('GET', baseURL + 'calendars', true)
+    request.open('GET', baseURL + 'getCalendarsForUser/' + username, true)
     request.onload = function () {
       var data = JSON.parse(this.response);
       if (data != null) {
