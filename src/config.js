@@ -1,5 +1,5 @@
 const appConfig = {
-    BaseURL: "http://localhost:8080/api/"
+    BaseURL: "https://a1980ba5ac2e.ngrok.io/api/"
 }
 
 export default appConfig; 
