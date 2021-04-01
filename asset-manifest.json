@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/ccdc-app/static/css/main.b84c19e9.chunk.css",
-    "main.js": "/ccdc-app/static/js/main.c4987381.chunk.js",
-    "main.js.map": "/ccdc-app/static/js/main.c4987381.chunk.js.map",
-    "runtime-main.js": "/ccdc-app/static/js/runtime-main.fc303996.js",
-    "runtime-main.js.map": "/ccdc-app/static/js/runtime-main.fc303996.js.map",
-    "static/css/2.b9188c9d.chunk.css": "/ccdc-app/static/css/2.b9188c9d.chunk.css",
-    "static/js/2.766480b2.chunk.js": "/ccdc-app/static/js/2.766480b2.chunk.js",
-    "static/js/2.766480b2.chunk.js.map": "/ccdc-app/static/js/2.766480b2.chunk.js.map",
-    "static/js/3.11307277.chunk.js": "/ccdc-app/static/js/3.11307277.chunk.js",
-    "static/js/3.11307277.chunk.js.map": "/ccdc-app/static/js/3.11307277.chunk.js.map",
-    "index.html": "/ccdc-app/index.html",
-    "static/css/2.b9188c9d.chunk.css.map": "/ccdc-app/static/css/2.b9188c9d.chunk.css.map",
-    "static/css/main.b84c19e9.chunk.css.map": "/ccdc-app/static/css/main.b84c19e9.chunk.css.map",
-    "static/js/2.766480b2.chunk.js.LICENSE.txt": "/ccdc-app/static/js/2.766480b2.chunk.js.LICENSE.txt",
-    "static/media/logo.a3ed4e1f.png": "/ccdc-app/static/media/logo.a3ed4e1f.png"
+    "main.css": "/CCDCFrontEnd/static/css/main.b84c19e9.chunk.css",
+    "main.js": "/CCDCFrontEnd/static/js/main.b10d433b.chunk.js",
+    "main.js.map": "/CCDCFrontEnd/static/js/main.b10d433b.chunk.js.map",
+    "runtime-main.js": "/CCDCFrontEnd/static/js/runtime-main.d9ac99ba.js",
+    "runtime-main.js.map": "/CCDCFrontEnd/static/js/runtime-main.d9ac99ba.js.map",
+    "static/css/2.b9188c9d.chunk.css": "/CCDCFrontEnd/static/css/2.b9188c9d.chunk.css",
+    "static/js/2.766480b2.chunk.js": "/CCDCFrontEnd/static/js/2.766480b2.chunk.js",
+    "static/js/2.766480b2.chunk.js.map": "/CCDCFrontEnd/static/js/2.766480b2.chunk.js.map",
+    "static/js/3.11307277.chunk.js": "/CCDCFrontEnd/static/js/3.11307277.chunk.js",
+    "static/js/3.11307277.chunk.js.map": "/CCDCFrontEnd/static/js/3.11307277.chunk.js.map",
+    "index.html": "/CCDCFrontEnd/index.html",
+    "static/css/2.b9188c9d.chunk.css.map": "/CCDCFrontEnd/static/css/2.b9188c9d.chunk.css.map",
+    "static/css/main.b84c19e9.chunk.css.map": "/CCDCFrontEnd/static/css/main.b84c19e9.chunk.css.map",
+    "static/js/2.766480b2.chunk.js.LICENSE.txt": "/CCDCFrontEnd/static/js/2.766480b2.chunk.js.LICENSE.txt",
+    "static/media/logo.a3ed4e1f.png": "/CCDCFrontEnd/static/media/logo.a3ed4e1f.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.fc303996.js",
+    "static/js/runtime-main.d9ac99ba.js",
     "static/css/2.b9188c9d.chunk.css",
     "static/js/2.766480b2.chunk.js",
     "static/css/main.b84c19e9.chunk.css",
-    "static/js/main.c4987381.chunk.js"
+    "static/js/main.b10d433b.chunk.js"
   ]
 }
