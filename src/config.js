@@ -1,5 +1,5 @@
 const appConfig = {
-    BaseURL: "https://a1980ba5ac2e.ngrok.io/api/"
+    BaseURL: "http://ccdcrestapi-env-1.eba-fzx9bqfw.ap-southeast-2.elasticbeanstalk.com/api/"
 }
 
 export default appConfig; 
