@@ -1,5 +1,5 @@
 {
-  "homepage": "http://ericnguyen-adl.github.io/ccdc-app",
+  "homepage": "http://ericnguyen-adl.github.io/CCDCFrontEnd",
   "name": "ccdc-app",
   "version": "0.1.0",
   "private": true,
@@ -27,7 +27,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "proxy": "http://localhost:8080",
+  "proxy": "http://ccdcrestapi-env-1.eba-fzx9bqfw.ap-southeast-2.elasticbeanstalk.com",
   "eslintConfig": {
     "extends": [
       "react-app",
